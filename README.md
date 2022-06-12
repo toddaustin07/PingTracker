@@ -1,5 +1,5 @@
 # PingTracker
-Track LAN device online/offline status with ping and update SmartThings Edge device
+Track LAN device online/offline status with ping commands, and update SmartThings Edge presence device (present / not present)
 
 ## Pre-requisites
 - SmartThings Edge-enabled Hub
