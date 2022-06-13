@@ -99,13 +99,18 @@ class pingeedevice(object):
 		self.present = 'unknown'
 		self.notpresentcounter = 0
 		self.skipupdates = 0
+		self.os = platform.system()
 
 	def ping(self):
 
-		cmd = f"ping -c {self.pingcount} {self.ipaddress}".split()
+		if self.os == 'Windows':
+			cmd = f"ping -n {self.pingcount} {self.ipaddress}".split()
+			expectedresult = f"Sent = {self.pingcount}, Received = {self.pingcount}"
+		else:
+			cmd = f"ping -c {self.pingcount} {self.ipaddress}".split()
+			expectedresult = f"{self.pingcount} packets transmitted, {self.pingcount} received"
+
 		pingresult = subprocess.run(cmd, shell=False, capture_output=True, text=True)
-		
-		expectedresult = f"{self.pingcount} packets transmitted, {self.pingcount} received"
 		
 		if expectedresult in pingresult.stdout:
 			return True
