@@ -14,8 +14,8 @@ Track LAN device online/offline status with ping commands, and update SmartThing
 4. Configure pingtrack.cfg (see details below)
 5. Configure each of the new SmartThings LAN Presence devices:
 - LAN Device Name:  unique device name (must match one of the 'ping_names' in config file below; [a-zA-Z0-9_] only; no spaces or other special characters)
-- LAN Device Address: IP:port of pingtrack.py application (e.g. 192.168.1.nnn:50001)
-- Bridge Address: IP:port of bridge server (e.g. 192.168.1.nnn:8088)
+- LAN Device Address: IP:port of pingtrack.py application (*e.g. 192.168.1.nnn:50001*)
+- Bridge Address: IP:port of bridge server (*e.g. 192.168.1.nnn:8088*)
 6. Start pingtrack.py
 
 ### Configuration File (pingtrack.cfg)
