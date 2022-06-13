@@ -106,6 +106,9 @@ class pingeedevice(object):
 		if self.os == 'Windows':
 			cmd = f"ping -n {self.pingcount} {self.ipaddress}".split()
 			expectedresult = f"Sent = {self.pingcount}, Received = {self.pingcount}"
+		elif self.os == 'Darwin':
+			cmd = f"ping -c {self.pingcount} {self.ipaddress}".split()
+			expectedresult = f"{self.pingcount} packets transmitted, {self.pingcount} packets received"
 		else:
 			cmd = f"ping -c {self.pingcount} {self.ipaddress}".split()
 			expectedresult = f"{self.pingcount} packets transmitted, {self.pingcount} received"
