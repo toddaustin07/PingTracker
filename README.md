@@ -25,7 +25,7 @@ Track LAN device online/offline status with ping commands, and update SmartThing
 ping_ips = 192.168.1.nnn, 192.168.1.mmm       << list of IP addresses to be monitored (comma separated)
 ping_names = dev1, dev2                       << associated list of unique names representing each device (comma separated)
 ping_count = 2, 3                             << how many ping iterations to send in each scan; unique for each IP address above (comma separated)
-ping_offline_retries = 2, 2                   << how many ping failures before offline status is sent to SmartThings; unique for each IP address above (comma separated)
+ping_offline_retries = 2, 2                   << how many scan failures before offline status is sent to SmartThings; unique for each IP address above (comma separated)
 #
 ping_interval = 10                            << number of seconds interval between each scan
 #
