@@ -7,6 +7,9 @@ Track LAN device online/offline status with ping commands, and update SmartThing
 - Edge Forwarding Bridge Server:  https://github.com/toddaustin07/edgebridge
 - Python 3.7 or later (Linux, Windows, Mac)
 
+## Caveats
+Tested on Debian Linux and Windows.  Other OS's may require a minor modification to the code.  Post requests here:  https://github.com/toddaustin07/PingTracker/issues
+
 ## Setup Steps
 1. Configure & install Edge Forwarding Bridge Server on a LAN computer (Linux/Windows/Mac)
 2. Install Edge driver to SmartThings hub via channel invite (above); in mobile app, Add device / Scan nearby devices to create new LAN Presence device
