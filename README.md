@@ -7,14 +7,25 @@ Track LAN device online/offline status with ping commands, and update SmartThing
 - Edge Forwarding Bridge Server:  https://github.com/toddaustin07/edgebridge
 - Python 3.7 or later (Linux, Windows, Mac)
 
-## Configuration File (pingtrack.cfg)
+## Setup Steps
+1. Configure & install Edge Forwarding Bridge Server on a LAN computer (Linux/Windows/Mac)
+2. Install Edge driver to SmartThings hub via channel invite (above); in mobile app, Add device / Scan nearby devices to create new LAN Presence device
+3. Create additional LAN Presence devices as needed using button within device Controls screen
+4. Configure pingtrack.cfg (see details below)
+5. Configure each of the new SmartThings LAN Presence devices:
+- LAN Device Name:  unique device name (must match one of the 'ping_names' in config file below; [a-zA-Z0-9_] only; no spaces or other special characters)
+- LAN Device Address: IP:port of pingtrack.py application (e.g. 192.168.1.nnn:50001)
+- Bridge Address: IP:port of bridge server (e.g. 192.168.1.nnn:8088)
+6. Start pingtrack.py
+
+### Configuration File (pingtrack.cfg)
 
 ```
 [config]
-ping_ips = 192.168.1.nnn, 192.168.1.mmm       << list of IP addresses to be monitored
-ping_names = dev1, dev2                       << associated list of unique names representing each device
-ping_count = 2, 3                             << how many ping iterations to send in each scan; unique for each IP address above
-ping_offline_retries = 2, 2                   << how many ping failures before offline status is sent to SmartThings; unique for each IP address above
+ping_ips = 192.168.1.nnn, 192.168.1.mmm       << list of IP addresses to be monitored (comma separated)
+ping_names = dev1, dev2                       << associated list of unique names representing each device (comma separated)
+ping_count = 2, 3                             << how many ping iterations to send in each scan; unique for each IP address above (comma separated)
+ping_offline_retries = 2, 2                   << how many ping failures before offline status is sent to SmartThings; unique for each IP address above (comma separated)
 #
 ping_interval = 10                            << number of seconds interval between each scan
 #
